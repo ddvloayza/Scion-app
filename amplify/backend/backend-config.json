@@ -1,0 +1,51 @@
+{
+  "api": {
+    "transcribeaudioapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "transcribeAudio"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "transcribeAudio": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_transcribeAudio_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "transcribeAudio"
+        }
+      ]
+    },
+    "AMPLIFY_function_transcribeAudio_openaiApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "transcribeAudio"
+        }
+      ]
+    },
+    "AMPLIFY_function_transcribeAudio_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "transcribeAudio"
+        }
+      ]
+    }
+  }
+}
